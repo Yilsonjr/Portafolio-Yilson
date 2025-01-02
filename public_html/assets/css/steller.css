@@ -11373,10 +11373,15 @@ pre {
   transition: all 0.3s;
 }
 
-.navbar .navbar-nav .nav-link.active {
+/*.navbar .navbar-nav .nav-link.active {
   color: #ff9045;
 }
-
+*/
+a.nav-link:hover {
+    background-color: #ff9045;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
 .navbar .navbar-nav .btn {
   min-width: 120px;
 }
