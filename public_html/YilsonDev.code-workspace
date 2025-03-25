@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Desktop/Curso js ITLA/Calculadora"
+		},
+		{
+			"path": "../../../../Desktop/Curso js ITLA/Lista Tareas"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Lista Tareas"
+	}
+}
