@@ -1,0 +1,361 @@
+
+    :root {
+        --primary: #3a7bd5;
+        --secondary: #00d2ff;
+        --light: #f8f9fa;
+        --dark: #212529;
+    }
+    
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        overflow-x: hidden;
+    }
+    
+    .navbar {
+        transition: all 0.3s ease;
+        padding: 1rem 0;
+    }
+    
+    .navbar.scrolled {
+        background-color: white !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 0;
+    }
+    
+    .hero {
+        background: linear-gradient(135deg, var(--primary), #0b5ed7);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-content {
+        z-index: 2;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 5px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .section {
+        padding: 5rem 0;
+    }
+    
+    .section-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 3rem;
+    }
+    
+    .section-title:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--primary);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .skill-card {
+        padding: 1.5rem;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .project-card {
+        margin-bottom: 2rem;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .project-img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .contact-info i {
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--light);
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        color: var(--primary);
+        font-size: 1.25rem;
+    }
+    
+    .btn-primary {
+        padding: 0.75rem 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-primary {
+        padding: 0.75rem 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    }
+    
+    .btn-outline-primary:hover {
+        background: var(--primary);
+        color: white;
+    }
+    
+    footer {
+        background: var(--dark);
+        color: white;
+        padding: 3rem 0;
+    }
+    
+    .social-links a {
+        color: white;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        color: var(--primary);
+        text-decoration: none;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+        }
+        
+        .profile-img {
+            margin: 0 auto 2rem;
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+    }
+    
+    /* Additional styles */
+    .skill-item {
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: white;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.1);
+        height: 100%;
+    }
+    
+    .skill-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .portfolio-item {
+        transition: transform 0.3s ease;
+    }
+    
+    .timeline {
+        position: relative;
+        padding-left: 2rem;
+    }
+    
+    .timeline:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--light);
+    }
+    
+    .timeline-item {
+        position: relative;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+    }
+    
+    .timeline-item:last-child {
+        padding-bottom: 0;
+    }
+    
+    .timeline-item:before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 3px solid white;
+    }
+    
+    .portfolio-item:hover {
+        transform: translateY(-10px);
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .contact-form button {
+        padding: 12px 30px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+    
+    .contact-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+        background-color: #f8f9fa;
+        padding: 5rem 0;
+    }
+
+    .project-card {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .project-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+
+    .project-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .project-overlay h4 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .project-overlay p {
+        margin-bottom: 20px;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: all 0.3s ease 0.1s;
+    }
+
+    .project-overlay .btn {
+        transform: translateY(40px);
+        opacity: 0;
+        transition: all 0.3s ease 0.2s;
+    }
+
+    .project-card:hover .project-overlay h4,
+    .project-card:hover .project-overlay p,
+    .project-card:hover .project-overlay .btn {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* Contact Section */
+    #contact .card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    #contact .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    #contact .form-control {
+        padding: 12px 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    #contact .form-control:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+    }
+
+    #contact .btn-primary {
+        padding: 10px 30px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+
+    #contact .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+    }

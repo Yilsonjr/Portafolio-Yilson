@@ -1,353 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Desarrollador web experto en HTML, CSS y JavaScript. Crea sitios web funcionales y atractivos, optimizados para conversiones. ¡Descarga mi CV y descubre mi portafolio!">
-    <meta name="author" content="Devcrud">
-    <title>YilsonDev | Desarrollador Web</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + Steller main styles -->
-    <link rel="stylesheet" href="assets/css/steller.css">
-</head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio profesional de Yilson, Desarrollador Web Full Stack">
+    <title>YilsonDev | Desarrollador Web Profesional</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Page navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/imgs/logo.png" alt=""></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="#home">Yilson<span class="text-primary">Dev</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto align-items-center">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Nosotros</a>
+                        <a class="nav-link" href="#about">Sobre Mí</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#service">Servicios</a>
-                    </li>                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                        <a class="nav-link" href="#skills">Habilidades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#testmonial">Testimonio</a>
+                        <a class="nav-link" href="#portfolio">Portafolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contacto</a>
                     </li>
-    
                 </ul>
             </div>
-        </div>          
+        </div>
     </nav>
-    <!-- End of page navibation -->
 
-    <!-- Page Header -->
-    <header class="header" id="home">
+    <!-- Hero Section -->
+    <header class="hero" id="home">
         <div class="container">
-            <div class="infos">
-                <h6 class="subtitle">Hola, Yo soy</h6>
-                <h6 class="title">Yilson Dev</h6>
-                <p>Desarrollador Web </p>
-
-                <div class="buttons pt-3">
-                    <button class="btn btn-primary rounded"> <a  href="#contact">CONTACTAME</a></button>
-                    <button  class="btn btn-dark rounded"> <a href="./assets/cv/curriculo.pdf" target="_blank">DESCARGA CV</a></button>
-                </div>      
-
-                <div class="socials mt-4">
-                    <a class="social-item" target="_blank" href="https://www.facebook.com/yilson13"><i class="ti-facebook"></i></a>
-                    <a class="social-item" target="_blank" href="https://www.instagram.com/yilsonjr/"><i class="ti-instagram"></i></a>
-                    <a class="social-item" target="_blank" href="mailto:ing.jimrod@gmail.com"><i class="ti-google"></i></a>
-                    <a class="social-item" target="_blank" href="https://github.com/Yilsonjr"><i class="ti-github"></i></a>
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-4">Hola, soy <span class="text-warning">Yilson</span></h1>
+                    <h2 class="h3 mb-4">Desarrollador Web Full Stack</h2>
+                    <p class="lead mb-4">Creo experiencias digitales hermosas y funcionales con tecnologías modernas.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary btn-lg">Contáctame</a>
+                        <a href="#portfolio" class="btn btn-outline-light btn-lg">Ver Trabajos</a>
+                    </div>
                 </div>
-            </div>              
-            <div class="img-holder">
-                <img src="assets/imgs/monitor.svg" alt="">
-            </div>      
-        </div>  
-
-        <!-- Header-widget -->
-        <div class="widget">
-            <div class="widget-item">
-                <h2>20</h2>
-                <p>Clientes</p>
-            </div>
-            <div class="widget-item">
-                <h2>30</h2>
-                <p>Proyectos</p>
-            </div>
-            <div class="widget-item">
-                <h2>15</h2>
-                <p>Certificados</p>
+                <div class="col-lg-6 text-center">
+                    <img src="assets/imgs/logo1.png" alt="Yilson" class="img-fluid rounded-circle profile-img">
+                </div>
             </div>
         </div>
     </header>
-    <!-- End of Page Header -->
-    
-    <!-- About section -->
-    <section id="about" class="section mt-3">
-        <div class="container mt-5">
-            <div class="row text-center text-md-left">
-                <div class="col-md-3">
-                    <img src="assets/imgs/me.jpg" alt="" class="img-thumbnail mb-4">
-                </div>
-                <div class="pl-md-4 col-md-9">
-                    <h6 class="title">Yilson JR</h6>
-                    <p class="subtitle">Desarrollador web</p>
-                    <p>Soy Yilson Jimenez Rodriguez, desarrollador web especializado en HTML, CSS y JavaScript. Me apasiona transformar ideas en experiencias web funcionales y atractivas, cuidando cada detalle en el diseño y la usabilidad. Con sólidos conocimientos en estas tecnologías, optimizo cada proyecto para garantizar un rendimiento ágil y una experiencia de usuario intuitiva, siempre alineándome con las mejores prácticas de la industria.</p>
-                    <button class="btn btn-primary rounded mt-3"><a href="./assets/cv/curriculo.pdf" target="_blank">DESCARGA CV</a></button>                   
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Service section -->
-    <section id="service" class="section">
-        <div class="container text-center">
-            <h6 class="subtitle">Servicios</h6>
-            <h6 class="section-title mb-4">¿Que hago?</h6>
-            <p class="mb-5 pb-4">Landing Page: Diseño de páginas optimizadas para captar leads y aumentar conversiones.
-                E-commerce: Tiendas online seguras y efectivas con pasarelas de pago y gestión de productos.
-                Real Estate: Plataformas inmobiliarias con filtros, mapas y gestión de propiedades.
-                SEO: Optimización avanzada para mejorar el posicionamiento en motores de búsqueda.
-            <div class="row">
-                <div class="col-sm-6 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-crown"></i>
-                            <h5>Landing Page</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-desktop"></i>
-                            <h5>Ecommerce</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-mobile"></i>
-                            <h5>Real state</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-bar-chart"></i>
-                            <h5>Seo</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Sectoin -->
-
-    <!-- Skills section -->
-    <section class="section">
-        <div class="container text-center">
-            <h6 class="subtitle">Skills</h6>
-            <h6 class="section-title mb-4">Porque elegirme</h6>Experto en HTML, CSS y JavaScript para sitios modernos y eficientes</p>
-
-            <div class="row text-left">
-                <div class="col-sm-6">
-                    <h6 class="mb-3">Html5</h6>
-                    <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 95%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>89%</span></div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <h6 class="mb-3">Css3</h6>
-                    <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>83%</span></div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <h6 class="mb-3">Js</h6>
-                    <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>95%</span></div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <h6 class="mb-3">ReactJS</h6>
-                    <div class="progress">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><span>95%</span></div>
-                    </div>
-                </div>
-    
-            </div>  
-        </div>
-    </section>
-    <!-- End of Skills sections -->
-
-    <!-- Portfolio section -->
-    <section id="portfolio" class="section">
-        <div class="container text-center">
-            <h6 class="subtitle">Portfolio</h6>
-            <h6 class="section-title mb-4"></h6>
-            <p class="mb-5 pb-4"></p>
-
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/dental.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>DentalClean</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="https://citas-dentales.vercel.app/"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/calculadora.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>Proyecto</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="https://calculadora-yilson.vercel.app/"><i class="ti-link"></i></a>
-                            </div>                              
-                        </div>
-                    </div>                  
-                </div>
-                <div class="col-sm-4">
-                    <div class="img-wrapper">
-                        <img src="assets/imgs/listaTarea.jpg" alt="">
-                        <div class="overlay">
-                            <div class="overlay-infos">
-                                <h5>ToDo List</h5>
-                                <a href="javascript:void(0)"><i class="ti-zoom-in"></i></a>
-                                <a href="https://lista-tareas-dusky-phi.vercel.app/"><i class="ti-link"></i></a>
-                            </div>  
-                        </div>
-                    </div>               
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- End of portfolio section -->
-
-    <!-- Testmonial Section -->
-    <section id="testmonial" class="section">
-        <div class="container text-center">
-            <h6 class="subtitle">Testmonial</h6>
-            <h6 class="section-title mb-4">Lo que dicen nuestros clientes</h6>
-            <p class="mb-5 pb-4"></p>
-
-
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card testmonial-card border">
-                            <div class="card-body">
-                               
-                                <p>"El servicio fue excepcional. Desde el primer contacto con profesionalismo y comprensión de nuestras necesidades. Nos hizo entrega de un sitio web rápido, atractivo y optimizado, y estuvieron siempre disponibles para cualquier ajuste que necesitábamos. ¡Definitivamente recomendaría sus servicios a cualquiera que busque calidad y compromiso!"</p>
-                                <h1 class="title">Emma Re</h1>
-                                <h1 class="subtitle">Abogada</h1>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="carousel-item">
-                        <div class="card testmonial-card border">
-                            <div class="card-body">
-                                <img src="assets/imgs/avatar-3.jpg" alt="">
-                                <p>"Estoy muy contento con el trabajo de YilsonDev. Crearon un sitio web funcional y visualmente impresionante que superó nuestras expectativas. "</p>
-                                <h1 class="title">Michael Abra</h1>
-                                <h1 class="subtitle">Web Developer</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-   
-    <section class="bg-gray p-0 section">
+    <!-- About Section -->
+    <section class="section bg-white" id="about">
         <div class="container">
-            <div class="card bg-primary">
-                <div class="card-body text-light">
-                    <div class="row align-items-center">
-                        <div class="col-sm-9 text-center text-sm-left">
-                            <h5 class="mt-3">Cotizacion o Contrato</h5>
-                            <p class="mb-3">Pide tú cotización o Asesoría.</p>
+            <h2 class="text-center section-title">Sobre <span class="text-primary">Mí</span></h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4">Desarrollador Web con pasión por crear soluciones digitales</h3>
+                    <p class="mb-4">Soy un apasionado desarrollador web con experiencia en la creación de aplicaciones web modernas y responsivas. Me especializo en el desarrollo frontend con tecnologías como React y Angular, y también tengo experiencia en el desarrollo backend con Node.js.</p>
+                    <p class="mb-4">Mi objetivo es crear experiencias de usuario excepcionales combinando diseño atractivo con código limpio y eficiente.</p>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                <span class="fw-medium">Email:</span>
+                                <a href="mailto:ing.jimrod@gmail.com" class="text-decoration-none ms-2">ing.jimrod@gmail.com</a>
+                            </div>
                         </div>
-                        <div class="col-sm-3 text-center text-sm-right">
-                            <button class="btn btn-light rounded">Contacto</button>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-phone text-primary me-2"></i>
+                                <span class="fw-medium">Teléfono:</span>
+                                <span class="ms-2">+1 829 388 8840</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                <span class="fw-medium">Ubicación:</span>
+                                <span class="ms-2">Gaspar Hernández, República Dominicana</span>
+                            </div>
                         </div>
                     </div>
-                </div> 
+                    <div class="mt-4">
+                        <a href="assets/cv/CV.pdf" class="btn btn-primary me-3">Descargar CV</a>
+                        <a href="#contact" class="btn btn-outline-primary">Contáctame</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="skill-item text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-code fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Desarrollo Web</h4>
+                                <p class="mb-0">Creación de sitios y aplicaciones web modernas y responsivas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-mobile-alt fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Diseño Responsivo</h4>
+                                <p class="mb-0">Diseños que se adaptan perfectamente a cualquier dispositivo.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-rocket fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Optimización</h4>
+                                <p class="mb-0">Mejora del rendimiento y velocidad de carga.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item text-center p-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-server fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="h5 mb-3">Backend</h4>
+                                <p class="mb-0">Desarrollo de APIs y lógica del servidor.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>      
-    <!-- End od Hire me section. -->
+    </section>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-50 animate-on-scroll" data-animation="fade-up">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-4">Mis <span class="text-primary">Habilidades</span></h2>
+        <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+        
+        <div class="row g-4">
+            <!-- Frontend Skills -->
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-html5 fa-3x text-danger"></i>
+                    </div>
+                    <h4 class="h5 mb-3">HTML5</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-css3-alt fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="h5 mb-3">CSS3</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-js fa-3x text-warning"></i>
+                    </div>
+                    <h4 class="h5 mb-3">JavaScript</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-react fa-3x text-info"></i>
+                    </div>
+                    <h4 class="h5 mb-3">React</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-angular fa-3x text-danger"></i>
+                    </div>
+                    <h4 class="h5 mb-3">Angular</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-node-js fa-3x text-success"></i>
+                    </div>
+                    <h4 class="h5 mb-3">Node.js</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fas fa-database fa-3x text-secondary"></i>
+                    </div>
+                    <h4 class="h5 mb-3">MongoDB</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="skill-card text-center p-4">
+                    <div class="mb-3">
+                        <i class="fab fa-git-alt fa-3x text-dark"></i>
+                    </div>
+                    <h4 class="h5 mb-3">Git</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-dark" role="progressbar" style="width: 65%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-light animate-on-scroll" data-animation="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Mi <span class="text-primary">Portafolio</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+            
+            <div class="row g-4">
+                <!-- Proyecto 1 -->
+                <!-- <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="assets/imgs/dental.jpg" alt="Proyecto 1" class="img-fluid rounded">
+                        <div class="project-overlay">
+                            <h4>E-commerce</h4>
+                            <p>Tienda en línea moderna con carrito de compras</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+                 -->
+                <!-- Proyecto 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="assets/imgs/dental.jpg" alt="Proyecto 2" class="img-fluid rounded">
+                        <div class="project-overlay">
+                            <h4>Gestión Dental</h4>
+                            <p>Aplicación web para gestionar citas y turnos</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="assets/imgs/listaTarea.jpg" alt="Proyecto 3" class="img-fluid rounded">
+                        <div class="project-overlay">
+                            <h4>Aplicación Web</h4>
+                            <p>Plataforma de gestión de tareas</p>
+                            <a href="#" class="btn btn-sm btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="position-relative section">
-        <div class="container text-center">
-            <h6 class="subtitle">Contacto</h6>
-            <h6 class="section-title mb-4">Ponte en contacto conmigo</h6>
-            <p class="mb-5 pb-4">Programa tú cita.</p>
-
-          <!-- Principio del widget integrado de Calendly -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/tecnologosrd/hablemos-sobre-tu-proyecto-innovador?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Final del widget integrado de Calendly -->
+    <section id="contact" class="py-20 bg-white animate-on-scroll" data-animation="fade-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Contácta<span class="text-primary">me</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
             
-                    </div>
-                </div>                  
-            </div>
-        </div>  
-           
-    </section>
-    <!-- End of Contact Section -->
-
-    <!-- Page Footer -->
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-6">
-                    <p>Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a href="#" target="_blank">YilsonDev</a></p>
-                </div>
-                <div class="col-sm-6">
-                    <div class="socials">
-                        <a class="social-item" target="_blank" href="https://www.facebook.com/yilson13"><i class="ti-facebook"></i></a>
-                        <a class="social-item" target="_blank" href="https://www.instagram.com/yilsonjr/"><i class="ti-instagram"></i></a>
-                        <a class="social-item" target="_blank" href="mailto:ing.jimrod@gmail.com"><i class="ti-google"></i></a>
-                        <a class="social-item" target="_blank" href="https://github.com/Yilsonjr"><i class="ti-github"></i></a>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-5">
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label">Asunto</label>
+                                        <input type="text" class="form-control" id="subject" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Mensaje</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary px-5">Enviar Mensaje</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer> 
-    <!-- End of page footer -->
+    </section>
     
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    <!-- bootstrap 3 affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container mx-auto px-6">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-4">YilsonDev</h3>
+                    <p>Desarrollador Web Full Stack apasionado por crear experiencias digitales excepcionales.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://github.com/yilsonjr" class="me-3"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/yilsonjr/" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/blackstylerd" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/yilsonjr/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="h6 mb-4">Enlaces Rápidos</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Inicio</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">Sobre Mí</a></li>
+                        <li class="mb-2"><a href="#skills" class="text-white text-decoration-none">Habilidades</a></li>
+                        <li class="mb-2"><a href="#portfolio" class="text-white text-decoration-none">Portafolio</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4 class="h6 mb-4">Servicios</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-chevron-right text-primary me-2"></i> Desarrollo Web</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right text-primary me-2"></i> Aplicaciones Móviles</li>
+                        <li class="mb-2"><i class="fas fa-chevron-right text-primary me-2"></i> Diseño UI/UX</li>
+                        <li><i class="fas fa-chevron-right text-primary me-2"></i> Mantenimiento Web</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h4 class="h6 mb-4">Contacto</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> Ciudad, País</li>
+                        <li class="mb-2"><i class="fas fa-envelope text-primary me-2"></i> tu@email.com</li>
+                        <li><i class="fas fa-phone text-primary me-2"></i> +1 234 567 890</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; <span id="currentYear"></span> YilsonDev. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <!-- steller js -->
-    <script src="assets/js/steller.js"></script>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center bg-primary text-white rounded-circle position-fixed" style="width: 50px; height: 50px; bottom: 30px; right: 30px; z-index: 99; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/effect-scroll.js"></script>
+    
 </body>
 </html>

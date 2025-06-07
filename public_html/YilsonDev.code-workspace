@@ -4,10 +4,13 @@
 			"path": ".."
 		},
 		{
-			"path": "../../../../Desktop/Curso js ITLA/Calculadora"
+			"path": "../../PortafolioTic"
 		},
 		{
-			"path": "../../../../Desktop/Curso js ITLA/Lista Tareas"
+			"path": "../../AngularPro/cocoaPOS"
+		},
+		{
+			"path": "../../HappyCrunch"
 		}
 	],
 	"settings": {
