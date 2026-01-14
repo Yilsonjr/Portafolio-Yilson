@@ -4,19 +4,13 @@
 			"path": ".."
 		},
 		{
-			"path": "../../PortafolioTic"
-		},
-		{
 			"path": "../../AngularPro/cocoaPOS"
-		},
-		{
-			"path": "../../HappyCrunch"
 		},
 		{
 			"path": "../../sistema-educativo"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Lista Tareas"
+		"liveServer.settings.multiRootWorkspaceName": "sistema-educativo"
 	}
 }
