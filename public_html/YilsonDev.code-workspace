@@ -4,10 +4,13 @@
 			"path": ".."
 		},
 		{
-			"path": "../../AngularPro/cocoaPOS"
+			"path": "../../sistema-educativo"
 		},
 		{
-			"path": "../../sistema-educativo"
+			"path": "../../dla-tax"
+		},
+		{
+			"path": "../../dla-self-employed"
 		}
 	],
 	"settings": {
