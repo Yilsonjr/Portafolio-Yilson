@@ -193,7 +193,62 @@
   <div class="section-tag">Proyectos</div>
   <h2 class="section-title">Trabajo <span class="outline">selecto</span></h2>
   <div class="portfolio-grid">
-    <div class="proj-card reveal">
+    <div class="proj-card reveal proj-featured">
+      <div class="proj-featured-badge">⭐ Proyecto estrella</div>
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// SaaS Multi-Tenant POS<br>
+@Injectable() class LicenciaService {<br>
+&nbsp;&nbsp;planes = ['básico','pro','business']<br>
+&nbsp;&nbsp;checkTenant(negocio_id: UUID) {}<br>
+&nbsp;&nbsp;bloquearVencidos(): Observable {}<br>
+}
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">Angular 19</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Supabase</span>
+          <span class="proj-tag">PostgreSQL</span>
+          <span class="proj-tag">Vercel</span>
+        </div>
+        <div class="proj-title">LogosPOS — SaaS POS Multi-Tenant</div>
+        <p class="proj-desc">Plataforma SaaS de Punto de Venta con arquitectura Multi-Tenant. Gestiona billares, restaurantes, tiendas y food trucks bajo una sola infraestructura. Incluye sistema de licencias, roles granulares, módulos dinámicos por negocio, impresión térmica y soporte offline.</p>
+        <a href="https://logospos-billar.vercel.app" class="proj-link" target="_blank">Ver en vivo</a>
+      </div>
+    </div>
+    <div class="proj-card reveal reveal-delay-1 proj-featured">
+      <div class="proj-featured-badge">⭐ Proyecto estrella</div>
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// Firma digital SHA-256<br>
+interface SignZone {<br>
+&nbsp;&nbsp;firmante: string;<br>
+&nbsp;&nbsp;hash: string; // SHA-256<br>
+&nbsp;&nbsp;auditTrail: AuditEvent[];<br>
+}
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">Angular 21</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Lemon Squeezy</span>
+          <span class="proj-tag">SHA-256</span>
+        </div>
+        <div class="proj-title">SignFlow v2.0 — Firma Digital SaaS</div>
+        <p class="proj-desc">SaaS de firma digital con múltiples firmantes, zonas de firma por página, verificación de integridad SHA-256 y audit trail completo. Planes Free, Pro, Business y Pay-per-use integrados con Lemon Squeezy.</p>
+        <a href="https://signflow-eight.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
+      </div>
+    </div>
+     <div class="proj-card reveal">
       <div class="proj-img">
         <div class="proj-img-inner">
           <div class="proj-mockup">
@@ -210,67 +265,12 @@ export class GestionTics {}
       <div class="proj-body">
         <div class="proj-tags">
           <span class="proj-tag">Angular</span>
-          <span class="proj-tag">TypeScript</span>
-          <span class="proj-tag">Supabase</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">MongoDB</span>
         </div>
         <div class="proj-title">Gestión de Recursos TICS</div>
-        <p class="proj-desc">Aplicación web para gestionar tecnologías educativas en centros educativos. Dashboard con control completo de inventario.</p>
+        <p class="proj-desc">Aplicación web para gestionar tecnologías educativas en centros educativos. Dashboard con control completo de inventario y reportes.</p>
         <a href="https://sistema-educativo.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
-      </div>
-    </div>
-    <div class="proj-card reveal reveal-delay-1">
-      <div class="proj-img">
-        <div class="proj-img-inner">
-           <div class="proj-mockup">
-// Angular + TypeScript<br>
-@Component({<br>
-&nbsp;&nbsp;selector: 'app-logospos',<br>
-&nbsp;&nbsp;standalone: true<br>
-})<br>
-export class LogosPOS {}
-          </div>
-        </div>
-        <div class="proj-overlay">Ver proyecto →</div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-tags">
-          <span class="proj-tag">Angular</span>
-          <span class="proj-tag">Bootstrap</span>
-          <span class="proj-tag">TypeScript</span>
-          <span class="proj-tag">Dexie.js</span>
-          <span class="proj-tag">PWA</span>
-          <span class="proj-tag">Supabase</span>
-        </div>
-        <div class="proj-title">LogosPOS — Plataforma SaaS Multi-Tenant de Punto de Venta</div>
-        <p class="proj-desc">Sistema de Punto de Venta inteligente, modular y adaptable para billiares, restaurantes, tiendas y más.</p>
-        <a href="https://app.logospos.com/" class="proj-link" target="_blank">Ver en vivo</a>
-      </div>
-    </div>
-    <div class="proj-card reveal reveal-delay-1">
-      <div class="proj-img">
-        <div class="proj-img-inner">
-           <div class="proj-mockup">
-// Angular + TypeScript<br>
-@Component({<br>
-&nbsp;&nbsp;selector: 'app-signflow',<br>
-&nbsp;&nbsp;standalone: true<br>
-})<br>
-export class SignFlow{}
-          </div>
-        </div>
-        <div class="proj-overlay">Ver proyecto →</div>
-      </div>
-      <div class="proj-body">
-        <div class="proj-tags">
-          <span class="proj-tag">Angular</span>
-          <span class="proj-tag">PDF.js</span>
-          <span class="proj-tag">TypeScript</span>
-          <span class="proj-tag">Lemon Squeezy</span>
-          <span class="proj-tag">Supabase</span>
-        </div>
-        <div class="proj-title">SignFlow v2.0</div>
-        <p class="proj-desc">SaaS de firma digital con múltiples firmantes, múltiples zonas de firma por página, planes de suscripción y verificación de integridad por SHA-256.</p>
-        <a href="https://signflow-eight.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
       </div>
     </div>
   </div>
