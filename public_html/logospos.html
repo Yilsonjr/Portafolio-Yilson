@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LogosPOS — El Sistema de Punto de Venta más completo de República Dominicana</title>
+<meta name="description" content="LogosPOS: sistema POS SaaS para negocios dominicanos. Facturación fiscal DGII, inventario, reportes, modo offline. Desde RD$1,200/mes.">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #060810;
+  --bg-card: #0c0f1a;
+  --bg-card-hover: #111628;
+  --cyan: #00f5d4;
+  --cyan-dim: rgba(0, 245, 212, 0.15);
+  --cyan-glow: rgba(0, 245, 212, 0.3);
+  --white: #f0f0f5;
+  --gray: #8a8fa8;
+  --gray-light: #b0b5c8;
+  --border: rgba(255, 255, 255, 0.06);
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════════════
+   NAVBAR
+   ═══════════════════════════════════════════════════ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar.scrolled {
+  background: rgba(6, 8, 16, 0.92);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+
+.nav-brand span { color: var(--cyan); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+  transition: color 0.25s;
+  letter-spacing: 0.5px;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.btn-primary {
+  background: var(--cyan);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: #33f7dd;
+  box-shadow: 0 0 30px var(--cyan-glow);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid rgba(0, 245, 212, 0.3);
+}
+
+.btn-outline:hover {
+  background: var(--cyan-dim);
+  border-color: var(--cyan);
+}
+
+.btn-sm {
+  padding: 10px 22px;
+  font-size: 13px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan-dim), transparent);
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: var(--cyan-dim);
+  border: 1px solid rgba(0, 245, 212, 0.15);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  margin-bottom: 24px;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero h1 .accent { color: var(--cyan); }
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--gray-light);
+  margin-bottom: 40px;
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: left;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--gray);
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════════
+   SECTIONS
+   ═══════════════════════════════════════════════════ */
+section { padding: 100px 0; }
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--gray-light);
+  max-width: 560px;
+  margin-bottom: 60px;
+}
+
+/* ═══════════════════════════════════════════════════
+   FEATURES
+   ═══════════════════════════════════════════════════ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 36px 28px;
+  transition: all 0.35s;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.feature-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(0, 245, 212, 0.12);
+  transform: translateY(-4px);
+}
+
+.feature-card:hover::before { opacity: 1; }
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cyan-dim);
+  margin-bottom: 20px;
+  font-size: 22px;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════
+   PRICING
+   ═══════════════════════════════════════════════════ */
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.pricing-toggle span {
+  font-size: 14px;
+  color: var(--gray);
+  transition: color 0.3s;
+}
+
+.pricing-toggle span.active { color: var(--white); }
+
+.toggle-switch {
+  width: 52px;
+  height: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.toggle-switch::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--cyan);
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s;
+  clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 4px, 100% 100%, 4px 100%, 0 calc(100% - 4px));
+}
+
+.toggle-switch.active::after {
+  transform: translateX(24px);
+}
+
+.pricing-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  padding: 4px 10px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 36px 28px;
+  position: relative;
+  transition: all 0.35s;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 245, 212, 0.12);
+}
+
+.pricing-card.featured {
+  border-color: rgba(0, 245, 212, 0.25);
+  background: linear-gradient(180deg, rgba(0, 245, 212, 0.04) 0%, var(--bg-card) 100%);
+}
+
+.pricing-card.featured::before {
+  content: 'MÁS POPULAR';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--bg);
+  background: var(--cyan);
+}
+
+.plan-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.plan-price {
+  font-family: var(--font-mono);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.plan-price .currency {
+  font-size: 18px;
+  color: var(--gray);
+  vertical-align: super;
+}
+
+.plan-period {
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 28px;
+}
+
+.plan-features {
+  margin-bottom: 32px;
+}
+
+.plan-features li {
+  font-size: 14px;
+  color: var(--gray-light);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plan-features li::before {
+  content: '—';
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.pricing-card .btn { width: 100%; justify-content: center; }
+
+/* ═══════════════════════════════════════════════════
+   PAYMENT METHODS
+   ═══════════════════════════════════════════════════ */
+.payments {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.payments-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.payment-group h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-group h3 span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  padding: 2px 8px;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.payment-icon {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 16px 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-light);
+  transition: all 0.3s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.payment-icon:hover {
+  border-color: rgba(0, 245, 212, 0.2);
+  color: var(--white);
+  background: var(--bg-card-hover);
+}
+
+/* ═══════════════════════════════════════════════════
+   TESTIMONIAL
+   ═══════════════════════════════════════════════════ */
+.testimonial-card {
+  max-width: 640px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 48px 40px;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--cyan);
+}
+
+.testimonial-quote {
+  font-size: 18px;
+  color: var(--gray-light);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  font-size: 48px;
+  color: var(--cyan);
+  font-family: var(--font-display);
+  line-height: 0;
+  vertical-align: -12px;
+  margin-right: 4px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--cyan-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--cyan);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.testimonial-role {
+  font-size: 13px;
+  color: var(--gray);
+  font-family: var(--font-mono);
+}
+
+/* ═══════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════ */
+.faq-list {
+  max-width: 720px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  padding: 24px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: color 0.3s;
+}
+
+.faq-question:hover { color: var(--cyan); }
+
+.faq-question .icon {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--cyan);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-question .icon { transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+
+.faq-answer p {
+  padding: 0 0 24px;
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.8;
+}
+
+/* ═══════════════════════════════════════════════════
+   CTA FINAL
+   ═══════════════════════════════════════════════════ */
+.cta-section {
+  text-align: center;
+  position: relative;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.cta-section .section-title {
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.cta-section .section-desc {
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 0 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer-brand .nav-brand { margin-bottom: 16px; }
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--gray);
+  max-width: 280px;
+  line-height: 1.7;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  color: var(--gray);
+  padding: 4px 0;
+  transition: color 0.25s;
+}
+
+.footer-col a:hover { color: var(--cyan); }
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--gray);
+  transition: all 0.3s;
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+.footer-socials a:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLL REVEAL
+   ═══════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .features-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(6, 8, 16, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .features-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    gap: 32px;
+  }
+
+  .hero h1 { letter-spacing: -1px; }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .pricing-card.featured {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .hero-stats { flex-direction: column; gap: 20px; }
+
+  .cta-actions { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar">
+  <div class="container">
+    <a href="#" class="nav-brand">Logos<span>POS</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#funcionalidades">Funcionalidades</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://app.logospos.com" class="btn btn-primary btn-sm" target="_blank">Comenzar Gratis</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge reveal">Sistema POS #1 en RD</div>
+      <h1 class="reveal">Tu negocio merece un POS que <span class="accent">realmente funcione</span></h1>
+      <p class="hero-sub reveal">El sistema de punto de venta más completo de República Dominicana. Facturación fiscal DGII, inventario inteligente y reportes en tiempo real — todo en la nube.</p>
+      <div class="hero-actions reveal">
+        <a href="https://app.logospos.com" class="btn btn-primary" target="_blank">Comenzar Gratis</a>
+        <a href="https://wa.me/18293888840" class="btn btn-outline" target="_blank">Solicitar Demo</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <div class="stat-value" data-target="3">0</div>
+          <div class="stat-label">Negocios Activos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" data-target="99.9" data-suffix="%">0</div>
+          <div class="stat-label">Uptime Garantizado</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" data-fixed="24/7">24/7</div>
+          <div class="stat-label">Soporte Técnico</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FUNCIONALIDADES ══════════════ -->
+<section id="funcionalidades">
+  <div class="container">
+    <span class="section-tag reveal">Funcionalidades</span>
+    <h2 class="section-title reveal">Todo lo que necesitas,<br>nada que te sobre</h2>
+    <p class="section-desc reveal">Cada módulo diseñado para la realidad del comercio dominicano. Sin complicaciones, sin funciones innecesarias.</p>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">&#9634;</div>
+        <h3>Punto de Venta</h3>
+        <p>Interfaz rápida e intuitiva para procesar ventas en segundos. Atajos de teclado, búsqueda inteligente y operación fluida.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">&#9776;</div>
+        <h3>Inventario</h3>
+        <p>Control total de productos, categorías, alertas de stock bajo y movimientos de inventario en tiempo real.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">&#9993;</div>
+        <h3>Facturación Fiscal DGII</h3>
+        <p>NCF automático, cálculo de ITBIS y generación de reportes 606, 607 y 608 listos para la DGII.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">&#8372;</div>
+        <h3>Gestión de Caja</h3>
+        <p>Apertura, cierre, arqueos y control de efectivo. Registra cada movimiento con trazabilidad completa.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">&#9783;</div>
+        <h3>Reportes y Analytics</h3>
+        <p>Dashboards con métricas clave: ventas por período, productos más vendidos, rentabilidad y tendencias.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">&#8635;</div>
+        <h3>Modo Offline + Sync</h3>
+        <p>Sigue vendiendo sin internet. Cuando la conexión regresa, todo se sincroniza automáticamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRECIOS ══════════════ -->
+<section id="precios">
+  <div class="container">
+    <span class="section-tag reveal">Precios</span>
+    <h2 class="section-title reveal">Simple, transparente,<br>sin sorpresas</h2>
+    <p class="section-desc reveal">Elige el plan que se adapte a tu negocio. Todos incluyen actualizaciones y soporte.</p>
+
+    <div class="pricing-toggle reveal">
+      <span class="active" id="labelMensual">Mensual</span>
+      <div class="toggle-switch" id="toggleSwitch" role="button" tabindex="0" aria-label="Cambiar entre mensual y anual"></div>
+      <span id="labelAnual">Anual</span>
+      <span class="pricing-badge">Ahorra 20%</span>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Emprendedor -->
+      <div class="pricing-card reveal">
+        <div class="plan-name">Emprendedor</div>
+        <div class="plan-price"><span class="currency">RD$</span><span class="price-amount" data-monthly="1200" data-annual="960">1,200</span></div>
+        <div class="plan-period">/mes</div>
+        <ul class="plan-features">
+          <li>1 usuario</li>
+          <li>Punto de Venta completo</li>
+          <li>Hasta 500 productos</li>
+          <li>Modo offline</li>
+          <li>Facturación DGII</li>
+        </ul>
+        <a href="https://app.logospos.com" class="btn btn-outline" target="_blank">Comenzar</a>
+      </div>
+
+      <!-- Profesional -->
+      <div class="pricing-card featured reveal">
+        <div class="plan-name">Profesional</div>
+        <div class="plan-price"><span class="currency">RD$</span><span class="price-amount" data-monthly="2500" data-annual="2000">2,500</span></div>
+        <div class="plan-period">/mes</div>
+        <ul class="plan-features">
+          <li>Hasta 5 usuarios</li>
+          <li>Productos ilimitados</li>
+          <li>Reportes DGII 606/607/608</li>
+          <li>Hasta 3 sucursales</li>
+          <li>Reportes avanzados</li>
+        </ul>
+        <a href="https://app.logospos.com" class="btn btn-primary" target="_blank">Comenzar</a>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="pricing-card reveal">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price"><span class="currency">RD$</span><span class="price-amount" data-monthly="5000" data-annual="4000">5,000</span></div>
+        <div class="plan-period">/mes</div>
+        <ul class="plan-features">
+          <li>Usuarios ilimitados</li>
+          <li>Sucursales ilimitadas</li>
+          <li>API de integración</li>
+          <li>Soporte prioritario</li>
+          <li>Onboarding dedicado</li>
+        </ul>
+        <a href="https://wa.me/18293888840" class="btn btn-outline" target="_blank">Contactar Ventas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MÉTODOS DE PAGO ══════════════ -->
+<section class="payments" id="pagos">
+  <div class="container">
+    <span class="section-tag reveal">Métodos de Pago</span>
+    <h2 class="section-title reveal">Paga como prefieras</h2>
+    <p class="section-desc reveal">Aceptamos tarjetas de crédito y criptomonedas para tu comodidad.</p>
+
+    <div class="payments-grid reveal">
+      <div class="payment-group">
+        <h3>Tarjetas <span>tradicional</span></h3>
+        <div class="payment-icons">
+          <div class="payment-icon">VISA</div>
+          <div class="payment-icon">Mastercard</div>
+          <div class="payment-icon">Amex</div>
+        </div>
+      </div>
+      <div class="payment-group">
+        <h3>Crypto <span>web3</span></h3>
+        <div class="payment-icons">
+          <div class="payment-icon">Bitcoin</div>
+          <div class="payment-icon">Ethereum</div>
+          <div class="payment-icon">USDC</div>
+          <div class="payment-icon">USDT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TESTIMONIOS ══════════════ -->
+<section id="testimonios">
+  <div class="container">
+    <span class="section-tag reveal">Testimonios</span>
+    <h2 class="section-title reveal">Lo que dicen<br>nuestros clientes</h2>
+    <p class="section-desc reveal">Negocios reales usando LogosPOS cada día.</p>
+
+    <div class="testimonial-card reveal">
+      <p class="testimonial-quote">LogosPOS transformó la forma en que manejo mi negocio. La facturación fiscal y el control de inventario me ahorran horas cada semana. El soporte siempre responde rápido.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">DA</div>
+        <div>
+          <div class="testimonial-name">Donkaver Arias</div>
+          <div class="testimonial-role">Cliente LogosPOS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FAQ ══════════════ -->
+<section id="faq">
+  <div class="container">
+    <span class="section-tag reveal">Preguntas Frecuentes</span>
+    <h2 class="section-title reveal">Resolvemos tus dudas</h2>
+    <p class="section-desc reveal">Todo lo que necesitas saber antes de empezar.</p>
+
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          ¿Necesito internet para usar LogosPOS?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No necesariamente. LogosPOS cuenta con modo offline que te permite seguir facturando y vendiendo sin conexión a internet. Cuando la conexión se restablece, todos los datos se sincronizan automáticamente con la nube.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          ¿LogosPOS cumple con los requisitos de la DGII?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí. LogosPOS genera NCF automáticos, calcula el ITBIS correctamente y produce los reportes 606, 607 y 608 en el formato que exige la DGII. Tu negocio siempre estará en cumplimiento fiscal.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          ¿Puedo manejar varias sucursales?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí. El plan Profesional permite hasta 3 sucursales y el plan Enterprise ofrece sucursales ilimitadas. Toda la información se centraliza en un solo dashboard para que tengas control total de tu operación.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          ¿Qué pasa si necesito ayuda con la configuración?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Ofrecemos soporte técnico 24/7 por WhatsApp y correo electrónico. El plan Enterprise incluye un proceso de onboarding dedicado donde te acompañamos paso a paso en la configuración completa del sistema.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          ¿Puedo cambiar de plan en cualquier momento?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, puedes subir o bajar de plan cuando quieras. El cambio se aplica en tu próximo ciclo de facturación. No hay penalidades ni contratos de permanencia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CTA FINAL ══════════════ -->
+<section class="cta-section" id="contacto">
+  <div class="container">
+    <span class="section-tag reveal">Empieza hoy</span>
+    <h2 class="section-title reveal">Lleva tu negocio al<br>siguiente nivel</h2>
+    <p class="section-desc reveal">Únete a los negocios dominicanos que ya confían en LogosPOS. Sin compromisos, sin tarjeta de crédito para empezar.</p>
+    <div class="cta-actions reveal">
+      <a href="https://app.logospos.com" class="btn btn-primary" target="_blank">Crear Cuenta Gratis</a>
+      <a href="https://wa.me/18293888840" class="btn btn-outline" target="_blank">Hablar con Ventas</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-brand">Logos<span>POS</span></div>
+        <p>El sistema de punto de venta más completo de República Dominicana. Diseñado para la realidad de tu negocio.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Producto</h4>
+        <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#precios">Precios</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://app.logospos.com" target="_blank">Acceder</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:ing.jimrod@gmail.com">ing.jimrod@gmail.com</a>
+        <a href="tel:+18293888840">+1 829 388-8840</a>
+        <a href="https://wa.me/18293888840" target="_blank">WhatsApp</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <a>Gaspar Hernández</a>
+        <a>República Dominicana</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LogosPOS — Creado por Yilson Jiménez</p>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/yilsonjr/" target="_blank" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/yilson13/" target="_blank" aria-label="Facebook">FB</a>
+        <a href="https://wa.me/18293888840" target="_blank" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ JAVASCRIPT ══════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  // ── Navbar scroll effect ──
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // ── Hamburger toggle ──
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Close menu on link click
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // ── Scroll Reveal ──
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => revealObserver.observe(el));
+
+  // ── Animated counters ──
+  const statValues = document.querySelectorAll('.stat-value[data-target]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        const isDecimal = target % 1 !== 0;
+        const duration = 1500;
+        const start = performance.now();
+
+        function animate(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = target * eased;
+
+          if (isDecimal) {
+            el.textContent = current.toFixed(1) + suffix;
+          } else {
+            el.textContent = Math.round(current) + suffix;
+          }
+
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  statValues.forEach(el => counterObserver.observe(el));
+
+  // ── Pricing toggle ──
+  const toggleSwitch = document.getElementById('toggleSwitch');
+  const labelMensual = document.getElementById('labelMensual');
+  const labelAnual = document.getElementById('labelAnual');
+  const priceAmounts = document.querySelectorAll('.price-amount');
+  let isAnnual = false;
+
+  function formatPrice(num) {
+    return num.toLocaleString('es-DO');
+  }
+
+  toggleSwitch.addEventListener('click', () => {
+    isAnnual = !isAnnual;
+    toggleSwitch.classList.toggle('active', isAnnual);
+    labelMensual.classList.toggle('active', !isAnnual);
+    labelAnual.classList.toggle('active', isAnnual);
+
+    priceAmounts.forEach(el => {
+      const price = isAnnual ? parseInt(el.dataset.annual) : parseInt(el.dataset.monthly);
+      el.textContent = formatPrice(price);
+    });
+  });
+
+  // ── FAQ Accordion ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const wasOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+
+      // Open clicked if it wasn't open
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
