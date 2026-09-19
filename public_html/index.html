@@ -193,6 +193,8 @@
   <div class="section-tag">Proyectos</div>
   <h2 class="section-title">Trabajo <span class="outline">selecto</span></h2>
   <div class="portfolio-grid">
+
+    <!-- 1. LogosPOS ⭐ -->
     <div class="proj-card reveal proj-featured">
       <div class="proj-featured-badge">⭐ Proyecto estrella</div>
       <div class="proj-img">
@@ -214,15 +216,44 @@
           <span class="proj-tag">TypeScript</span>
           <span class="proj-tag">Supabase</span>
           <span class="proj-tag">PostgreSQL</span>
-          <span class="proj-tag">Vercel</span>
         </div>
-        <div class="proj-title">LogosPOS — SaaS POS Multi-Tenant</div>
-        <p class="proj-desc">Plataforma SaaS de Punto de Venta con arquitectura Multi-Tenant. Gestiona billares, restaurantes, tiendas y food trucks bajo una sola infraestructura. Incluye sistema de licencias, roles granulares, módulos dinámicos por negocio, impresión térmica y soporte offline.</p>
-        <a href="https://logospos-billar.vercel.app" class="proj-link" target="_blank">Ver en vivo</a>
+        <div class="proj-title">LogosPOS</div>
+        <p class="proj-desc">Sistema POS SaaS con arquitectura Multi-Tenant, roles granulares, módulos dinámicos, offline-first, impresión térmica y facturación DGII. Activo en negocios reales en RD.</p>
+        <a href="https://app.logospos.com" class="proj-link" target="_blank">Ver en vivo</a>
       </div>
     </div>
+
+    <!-- 2. LogosPOS Food ⭐ -->
     <div class="proj-card reveal reveal-delay-1 proj-featured">
       <div class="proj-featured-badge">⭐ Proyecto estrella</div>
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// Restaurantes & Food Trucks<br>
+interface Mesa {<br>
+&nbsp;&nbsp;id: number;<br>
+&nbsp;&nbsp;estado: 'libre' | 'ocupada';<br>
+&nbsp;&nbsp;pedidos: Orden[];<br>
+}
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">Angular 19</span>
+          <span class="proj-tag">Supabase Edge Functions</span>
+          <span class="proj-tag">KDS</span>
+          <span class="proj-tag">TypeScript</span>
+        </div>
+        <div class="proj-title">LogosPOS Food</div>
+        <p class="proj-desc">Plataforma SaaS para restaurantes, bares y food trucks. Mapa visual de mesas en tiempo real, pantalla KDS de cocina, pago dividido por comensal y ruteo de impresión térmica.</p>
+        <a href="https://food.logospos.com" class="proj-link" target="_blank">Ver en vivo</a>
+      </div>
+    </div>
+
+    <!-- 3. SignFlow v2.0 -->
+    <div class="proj-card reveal">
       <div class="proj-img">
         <div class="proj-img-inner">
           <div class="proj-mockup">
@@ -240,24 +271,26 @@ interface SignZone {<br>
         <div class="proj-tags">
           <span class="proj-tag">Angular 21</span>
           <span class="proj-tag">TypeScript</span>
-          <span class="proj-tag">Lemon Squeezy</span>
           <span class="proj-tag">SHA-256</span>
+          <span class="proj-tag">Lemon Squeezy</span>
         </div>
-        <div class="proj-title">SignFlow v2.0 — Firma Digital SaaS</div>
-        <p class="proj-desc">SaaS de firma digital con múltiples firmantes, zonas de firma por página, verificación de integridad SHA-256 y audit trail completo. Planes Free, Pro, Business y Pay-per-use integrados con Lemon Squeezy.</p>
+        <div class="proj-title">SignFlow v2.0</div>
+        <p class="proj-desc">SaaS de firma digital con múltiples firmantes, zonas de firma por página, verificación SHA-256, audit trail y planes Free, Pro y Business con pagos integrados.</p>
         <a href="https://signflow-eight.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
       </div>
     </div>
-     <div class="proj-card reveal">
+
+    <!-- 4. Fitness Factory App -->
+    <div class="proj-card reveal reveal-delay-1">
       <div class="proj-img">
         <div class="proj-img-inner">
           <div class="proj-mockup">
-// Angular + TypeScript<br>
+// Gestión de Gimnasio<br>
 @Component({<br>
-&nbsp;&nbsp;selector: 'app-tics',<br>
+&nbsp;&nbsp;selector: 'app-gym',<br>
 &nbsp;&nbsp;standalone: true<br>
 })<br>
-export class GestionTics {}
+export class GymDashboard {}
           </div>
         </div>
         <div class="proj-overlay">Ver proyecto →</div>
@@ -265,14 +298,125 @@ export class GestionTics {}
       <div class="proj-body">
         <div class="proj-tags">
           <span class="proj-tag">Angular</span>
-          <span class="proj-tag">Node.js</span>
-          <span class="proj-tag">MongoDB</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Supabase</span>
         </div>
-        <div class="proj-title">Gestión de Recursos TICS</div>
-        <p class="proj-desc">Aplicación web para gestionar tecnologías educativas en centros educativos. Dashboard con control completo de inventario y reportes.</p>
-        <a href="https://sistema-educativo.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
+        <div class="proj-title">Fitness Factory App</div>
+        <p class="proj-desc">Sistema de gestión para gimnasio con control de membresías, caja, punto de venta, acceso de clientes y métricas operativas en tiempo real.</p>
+        <a href="https://app.fitnessfactoryrd.com/" class="proj-link" target="_blank">Ver en vivo</a>
       </div>
     </div>
+
+    <!-- 5. Escuela PFMG -->
+    <div class="proj-card reveal">
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// Portal Educativo RBAC<br>
+export async function getKPIs() {<br>
+&nbsp;&nbsp;const data = await prisma<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.estudiante.findMany();<br>
+&nbsp;&nbsp;return calcularRiesgo(data);<br>
+}
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">Next.js 16</span>
+          <span class="proj-tag">Prisma 7</span>
+          <span class="proj-tag">NextAuth</span>
+          <span class="proj-tag">Tailwind 4</span>
+        </div>
+        <div class="proj-title">Escuela PFMG</div>
+        <p class="proj-desc">Portal informativo y sistema administrativo para centro educativo. Dashboard con KPIs, asistencia, alertas de riesgo, importación desde SIGERD del MINERD y control de acceso por roles (RBAC).</p>
+        <a href="https://github.com/Yilsonjr/escuela-pfmg" class="proj-link" target="_blank">Ver repositorio</a>
+      </div>
+    </div>
+
+    <!-- 6. CacaoPOS -->
+    <div class="proj-card reveal reveal-delay-1">
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// Offline-first con Dexie.js<br>
+const db = new Dexie('CacaoDB');<br>
+db.version(1).stores({<br>
+&nbsp;&nbsp;compras: '++id, fecha'<br>
+});<br>
+syncOnReconnect(db);
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">Angular</span>
+          <span class="proj-tag">Supabase</span>
+          <span class="proj-tag">Dexie.js</span>
+          <span class="proj-tag">Offline-first</span>
+        </div>
+        <div class="proj-title">CacaoPOS</div>
+        <p class="proj-desc">Plataforma de compra y venta de cacao en campo para OG Ovalles. Diseñada para operar sin internet con sincronización automática al recuperar la conectividad.</p>
+        <a href="https://cacao-pos-delta.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
+      </div>
+    </div>
+
+    <!-- 7. Fitness Factory Landing -->
+    <div class="proj-card reveal">
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// Landing Page Gimnasio<br>
+&lt;section class="planes"&gt;<br>
+&nbsp;&nbsp;&lt;!-- Diseño oscuro --&gt;<br>
+&nbsp;&nbsp;&lt;!-- Fotos reales --&gt;<br>
+&nbsp;&nbsp;&lt;!-- WhatsApp CTA --&gt;<br>
+&lt;/section&gt;
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">HTML5</span>
+          <span class="proj-tag">CSS3</span>
+          <span class="proj-tag">JavaScript</span>
+        </div>
+        <div class="proj-title">Fitness Factory Landing</div>
+        <p class="proj-desc">Landing page para gimnasio en Jamao al Norte, Espaillat. Diseño oscuro con fotos reales, planes de membresía, galería y contacto directo por WhatsApp.</p>
+        <a href="https://gymfitnessfactory.netlify.app/" class="proj-link" target="_blank">Ver en vivo</a>
+      </div>
+    </div>
+
+    <!-- 8. Iglesia Ebenezer M.I. -->
+    <div class="proj-card reveal reveal-delay-1">
+      <div class="proj-img">
+        <div class="proj-img-inner">
+          <div class="proj-mockup">
+// Sitio Institucional<br>
+&lt;section class="comunidad"&gt;<br>
+&nbsp;&nbsp;&lt;!-- Eventos --&gt;<br>
+&nbsp;&nbsp;&lt;!-- Contacto --&gt;<br>
+&nbsp;&nbsp;&lt;!-- Congregación --&gt;<br>
+&lt;/section&gt;
+          </div>
+        </div>
+        <div class="proj-overlay">Ver proyecto →</div>
+      </div>
+      <div class="proj-body">
+        <div class="proj-tags">
+          <span class="proj-tag">HTML5</span>
+          <span class="proj-tag">CSS3</span>
+          <span class="proj-tag">JavaScript</span>
+        </div>
+        <div class="proj-title">Iglesia Ebenezer M.I.</div>
+        <p class="proj-desc">Sitio web institucional para Iglesia Ebenezer M.I. con información de la comunidad, eventos y contacto para la congregación.</p>
+        <a href="https://iep-law.vercel.app/" class="proj-link" target="_blank">Ver en vivo</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
