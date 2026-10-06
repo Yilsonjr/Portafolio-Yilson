@@ -1,3 +1,77 @@
+// SCROLL PROGRESS
+const scrollBar = document.getElementById('scroll-progress');
+window.addEventListener('scroll', () => {
+  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  scrollBar.style.width = pct + '%';
+}, {passive:true});
+
+// NAV SHRINK ON SCROLL
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, {passive:true});
+
+// HERO ENTRANCE
+window.addEventListener('load', () => {
+  document.getElementById('home').classList.add('hero-animated');
+
+  // TYPEWRITER
+  const words = ['Yilson', 'un Dev', 'Full Stack'];
+  let wi = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typewriter');
+  const cur = document.querySelector('.tw-cursor');
+  if(el) {
+    setTimeout(() => {
+      cur.classList.add('visible');
+      function type() {
+        const word = words[wi];
+        if (!deleting) {
+          el.textContent = word.slice(0, ++ci);
+          if (ci === word.length) {
+            if(wi === 0) { // Stop at "Yilson" permanently after first cycle
+              return;
+            }
+            setTimeout(() => { deleting = true; type(); }, 1800);
+            return;
+          }
+        } else {
+          el.textContent = word.slice(0, --ci);
+          if (ci === 0) {
+            deleting = false;
+            wi = (wi + 1) % words.length;
+            if(wi === 0) wi = 1;
+          }
+        }
+        setTimeout(type, deleting ? 55 : 90);
+      }
+      type();
+    }, 600);
+  }
+});
+
+// ANIMATED COUNTERS
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const step = target / (duration / 16);
+  let current = 0;
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = Math.floor(current) + suffix;
+    if (current >= target) clearInterval(timer);
+  }, 16);
+}
+
+// SKILL BAR ANIMATION ON SCROLL
+const skillObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-fill').forEach(bar => bar.classList.add('animated'));
+    }
+  });
+}, {threshold: 0.3});
+document.querySelectorAll('.skills-grid').forEach(el => skillObs.observe(el));
 
 // CURSOR
 const cursor=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
@@ -40,8 +114,22 @@ document.querySelectorAll('a,button,.proj-card,.skill-card,.service-card').forEa
 })();
 
 // SCROLL REVEALS
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      // trigger counters inside revealed elements
+      e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+    }
+  });
+},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// also observe stats directly
+const statObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting) e.target.querySelectorAll('[data-count]').forEach(animateCounter);});
+},{threshold:0.5});
+document.querySelectorAll('.hero-stats').forEach(el=>statObs.observe(el));
 
 // NAV ACTIVE
 const sections=document.querySelectorAll('section[id]');
